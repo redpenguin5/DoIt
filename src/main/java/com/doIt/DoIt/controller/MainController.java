@@ -15,7 +15,6 @@ public class MainController {
     private TaskService taskService;
 
     @RequestMapping(value ="/", method = RequestMethod.GET)
-    @ResponseBody
     public String home(HttpServletRequest request){
         request.setAttribute("mode", "MODE_HOME");
         return "index";

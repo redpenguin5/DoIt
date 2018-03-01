@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT" />
+
+    <title>Task Manager | Home</title>
+
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{css/style.css}" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div role="navigation">
+    <div class="navbar navbar-inverse">
+        <a href="/" class="navbar-brand">DoIt!</a>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="all-tasks">All Tasks</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container invisible-at-first" id="homeDiv">
+    <div class="jumbotron text-center">
+        <h2>Welcome to DoIt task manager! JUST DO IT!</h2>
+    </div>
+</div>
+<div class="container text-center" id="tasksDiv">
+    <h3>My Tasks</h3>
+    <hr />
+    <div class="table-responsive">
+        <table class='table table-responsive table-bordered text-left'>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Hours Estimated</th>
+                <th>Hours Contributed</th>
+                <th>Project ID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="task : ${tasks}">
+            <tr>
+                <td th:text="${task.task_ID}">1</td>
+                <td th:text="${task.task_name}">1</td>
+                <td th:text="${task.task_description}">1</td>
+                <td th:text="${task.task_status}">1</td>
+                <td th:text="${task.hours_estimated}">1</td>
+                <td th:text="${task.hours_contributed}">1</td>
+                <td th:text="${task.project_ID}">1</td>
+            </tr>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--<script th:src="@{js/jquery-1.11.1.min.js}"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+<script src="bootstrap.min.js"></script>
+<script th:src="@{js/bootstrap.min.js}"></script>
+</body>
+
+</html>
