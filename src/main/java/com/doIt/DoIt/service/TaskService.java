@@ -23,4 +23,12 @@ public class TaskService {
             tasks.add(t);
         return tasks;
     }
+
+    public void save(Task task){
+        taskRepository.save(task);
+    }
+
+    public void delete(int task_ID){
+        taskRepository.delete(task_ID);
+    }
 }

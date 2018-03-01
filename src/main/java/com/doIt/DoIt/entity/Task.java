@@ -29,6 +29,16 @@ public class Task implements Serializable {
         this.project_ID = project_ID;
     }
 
+    public Task(int task_ID, String task_name, String task_description) {
+        this.task_ID = task_ID;
+        this.task_name = task_name;
+        this.task_description = task_description;
+        this.task_status = "Not Started";
+        this.hours_contributed= 0;
+        this.hours_estimated = 0;
+        this.project_ID = 1234;
+    }
+
     public void setTask_ID(int task_ID) {
         this.task_ID = task_ID;
     }
