@@ -17,7 +17,7 @@ public class MainController {
     @RequestMapping(value ="/", method = RequestMethod.GET)
     public String home(HttpServletRequest request){
         request.setAttribute("mode", "MODE_HOME");
-        return "index";
+        return "home";
     }
 
     @GetMapping("/all-tasks")
@@ -26,11 +26,5 @@ public class MainController {
         request.setAttribute("mode", "MODE_TASKS");
         return "index";
     }
-    String message = "welcome";
-    @RequestMapping(value ="/home", method = RequestMethod.GET)
-    @ResponseBody
-    public String welcome(Map<String, Object> model) {
-        model.put("message", this.message);
-        return "welcome";
-    }
+
 }

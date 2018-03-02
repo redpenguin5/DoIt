@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT" />
+
+    <title>Task Manager | Home</title>
+
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{css/style.css}" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div role="navigation">
+    <div class="navbar navbar-inverse">
+        <a href="/" class="navbar-brand">DoIt!</a>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="all-tasks">All Tasks</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container invisible-at-first" id="homeDiv">
+    <div class="jumbotron text-center">
+        <h2>Welcome to DoIt task manager! JUST DO IT!</h2>
+    </div>
+</div>
+<div class="container text-center" id="tasksDiv">
+    <img src="https://images.gr-assets.com/hostedimages/1452697935ra/17728570.gif" alt="DO IT" style="width:500px;height:255px"  />
+
+</div>
+
+<!--<script th:src="@{js/jquery-1.11.1.min.js}"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+<script src="bootstrap.min.js"></script>
+<script th:src="@{js/bootstrap.min.js}"></script>
+</body>
+
+</html>
