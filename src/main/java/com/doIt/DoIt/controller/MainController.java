@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
+//notes: use rest controller, return response obj not Strings
 @Controller
 public class MainController {
 

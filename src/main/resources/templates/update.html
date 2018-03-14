@@ -38,9 +38,9 @@
 
 <!--some html here to make the form appear for editing the task-->
 <div class="container text-center">
-    <h3>Manage Task</h3>
+    <h3>Edit Task</h3>
     <form class="form-horizontal" method="POST" action="save-task">
-        <input type="hidden" name="id" th:value="${task.taskID}"/>
+        <input type="hidden" name="taskID" th:value="${task.taskID}"/>
         <input type="hidden" name="projectID" th:value="${task.projectID}"/>
         <input type="hidden" name="hours_estimated" th:value="${task.hours_estimated}"/>
         <input type="hidden" name="hours_contributed" th:value="${task.hours_contributed}"/>
