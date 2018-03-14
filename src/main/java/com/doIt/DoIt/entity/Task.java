@@ -2,57 +2,58 @@ package com.doIt.DoIt.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity(name="Task")
 public class Task implements Serializable {
 
     @Id
-    private int task_ID;
-    private String task_name;
-    private String task_description;
-    private String task_status;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int taskID;
+    private String name;
+    private String description;
+    private String status;
     private int hours_contributed;
     private int hours_estimated;
-    private int project_ID;
+    private int projectID;
 
     public Task() {
     }
 
-    public Task(int task_ID, String task_name, String task_description, String task_status, int hours_contributed, int hours_estimated, int project_ID) {
-        this.task_ID = task_ID;
-        this.task_name = task_name;
-        this.task_description = task_description;
-        this.task_status = task_status;
+    public Task(String name, String description, String status, int hours_contributed, int hours_estimated, int projectID) {
+        super();
+        this.name = name;
+        this.description = description;
+        this.status = status;
         this.hours_contributed = hours_contributed;
         this.hours_estimated = hours_estimated;
-        this.project_ID = project_ID;
+        this.projectID = projectID;
     }
 
-    public Task(int task_ID, String task_name, String task_description) {
-        this.task_ID = task_ID;
-        this.task_name = task_name;
-        this.task_description = task_description;
-        this.task_status = "Not Started";
+
+    public Task( String name, String description) {
+        super();
+        this.name = name;
+        this.description = description;
+        this.status = "Not Started";
         this.hours_contributed= 0;
         this.hours_estimated = 0;
-        this.project_ID = 1234;
+        this.projectID = 1;
     }
 
-    public int getTask_ID() {
-        return task_ID;
+    public int getTaskID() {
+        return taskID;
     }
 
-    public String getTask_name() {
-        return task_name;
+    public String getName() {
+        return name;
     }
 
-    public String getTask_description() {
-        return task_description;
+    public String getDescription() {
+        return description;
     }
 
-    public String getTask_status() {
-        return task_status;
+    public String getStatus() {
+        return status;
     }
 
     public int getHours_contributed() {
@@ -63,24 +64,24 @@ public class Task implements Serializable {
         return hours_estimated;
     }
 
-    public int getProject_ID() {
-        return project_ID;
+    public int getProjectID() {
+        return projectID;
     }
 
-    public void setTask_ID(int task_ID) {
-        this.task_ID = task_ID;
+    public void setTaskID(int taskID) {
+        this.taskID = taskID;
     }
 
-    public void setTask_name(String task_name) {
-        this.task_name = task_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setTask_description(String task_description) {
-        this.task_description = task_description;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setTask_status(String task_status) {
-        this.task_status = task_status;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public void setHours_contributed(int hours_contributed) {
@@ -91,20 +92,20 @@ public class Task implements Serializable {
         this.hours_estimated = hours_estimated;
     }
 
-    public void setProject_ID(int project_ID) {
-        this.project_ID = project_ID;
+    public void setProjectID(int projectID) {
+        this.projectID = projectID;
     }
 
     @Override
     public String toString() {
         return "Task{" +
-                "task_ID=" + task_ID +
-                ", task_name='" + task_name + '\'' +
-                ", task_description='" + task_description + '\'' +
-                ", task_status='" + task_status + '\'' +
+                "taskID=" + taskID +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", status='" + status + '\'' +
                 ", hours_contributed=" + hours_contributed +
                 ", hours_estimated=" + hours_estimated +
-                ", project_ID=" + project_ID +
+                ", projectID=" + projectID +
                 '}';
     }
 }

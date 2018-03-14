@@ -14,12 +14,13 @@ public class SampleRestController {
     @Autowired
     private TaskService taskService;
 
+    /*
     @GetMapping("/tasks")
     public String allTasks(){
         return taskService.getAllTasks().toString();
     }
 
-    /*
+
     @GetMapping("/save-task")
     public String saveTask(@RequestParam int id, @RequestParam String name, @RequestParam String desc){
         Task task = new Task(id, name, desc);

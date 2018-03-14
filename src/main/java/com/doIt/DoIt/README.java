@@ -13,20 +13,15 @@ public class README {
        -You'll see options such as "Copy", "Restore", "Export" etc...
        -Click on "Set server firewall"
        -Make sure Allow access to Azure services is on
-       -Then just click "Add client IP"
+       -Then just click "Add client IP" and "Save"
        -And that's it your IP should appear under mine and you should be able to connect to DB now
 
        From now you can just build and run the app.
 
-    2. Just like previous project this one has master and Dev branches.
-        Master branch will have "approved" code that works, dev branch is for code in progress etc.
-        MAKE SURE YOUR CODE WORKS before committing EVEN to dev branch (Or at least almost works)
-        DONT COMMIT BROKEN things. If you know it's fudged up don't commit.
-
-    3. Feel free to look into html ot to experiment with the html and styling. There are 2 files in resources/templates:
+    2.  There are 2 files in resources/templates:
         -index.html (this one i used for all-tasks http:/localhost:8080/all-tasks)
         -home.html (this one i used for "home page" http://localhost:8080)
-
+        -update.html for http:/localhost:8080/update-task
 
      */
 }
