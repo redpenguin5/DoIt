@@ -41,7 +41,7 @@ public class MainController {
     @GetMapping("/new-task")
     public String newTask(HttpServletRequest request){
         request.setAttribute("mode", "MODE_NEW");
-        return "update";
+        return "new";
     }
 
     @PostMapping("/save-task")
