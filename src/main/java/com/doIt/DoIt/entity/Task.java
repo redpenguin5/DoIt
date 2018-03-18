@@ -8,7 +8,6 @@ public class Task implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int counter = 0;
     private int taskID;
     private String name;
     private String description;
@@ -25,8 +24,6 @@ public class Task implements Serializable {
     public Task(String name, String description, String status, int hours_contributed, int hours_estimated, int projectID) {
         super();
         
-        taskID = generateTaskID();
-        
         if(name.length() > 50 || name == null) {
         	throw new IllegalArgumentException("Task name must be specified as a string under 50 characters.");
         }
@@ -42,20 +39,12 @@ public class Task implements Serializable {
         }
         else this.status = status; 
         
-        if(hours_contributed == null) {
-        	throw new IllegalArgumentException("Hours contributed must be specified as a whole number.");
-        }
-        else this.hours_contributed = hours_contributed;
+        this.hours_contributed = hours_contributed;
         
-        if(hours_estimated == null) {
-        	throw new IllegalArgumentException("Hours estimated must be specified as a whole number.");
-        }
-        else this.hours_estimated = hours_estimated;
+        this.hours_estimated = hours_estimated;
             
-        if(projectID; == null) {
-        	throw new IllegalArgumentException("Project ID must be specified as a whole number.");
-        }
-        else this.projectID = projectID;
+
+        this.projectID = projectID;
     }
 
     public Task(String name, String description) {
@@ -108,34 +97,27 @@ public class Task implements Serializable {
     }
 
     public void setDescription(String description) {
-        if(description.length() > 300 || description == null) {
-        	throw new IllegalArgumentException("Task description must be specified as a string under 300 characters.");
-        }
-        else this.description = description;
+        if (description.length() > 300 || description == null) {
+            throw new IllegalArgumentException("Task description must be specified as a string under 300 characters.");
+        } else this.description = description;
+    }
 
     public void setStatus(String status) {
         if(status.length() > 30 || status == null) {
         	throw new IllegalArgumentException("Task status must be specified as a string under 30 characters.");
         }
-        else this.status = status; 
+        else this.status = status;
+    }
+
 
     public void setHours_contributed(int hours_contributed) {
-        if(hours_contributed == null) {
-        	throw new IllegalArgumentException("Hours contributed must be specified as a whole number.");
-        }
-        else this.hours_contributed = hours_contributed;
+        this.hours_contributed = hours_contributed;}
 
     public void setHours_estimated(int hours_estimated) {
-        if(hours_estimated == null) {
-        	throw new IllegalArgumentException("Hours estimated must be specified as a whole number.");
-        }
-        else this.hours_estimated = hours_estimated;
+       this.hours_estimated = hours_estimated;}
 
     public void setProjectID(int projectID) {
-        if(projectID; == null) {
-        	throw new IllegalArgumentException("Project ID must be specified as a whole number.");
-        }
-        else this.projectID = projectID;
+        this.projectID = projectID;}
 
     @Override
     public String toString() {
@@ -150,12 +132,5 @@ public class Task implements Serializable {
                 '}';
     }
       
-    //Generates a unique taskID sequentially.
-    
-    public int generateTaskID() {
-    	
-    	counter++;
-    	int taskNo = counter;
-    	return taskNo;
-    }
+
 }
